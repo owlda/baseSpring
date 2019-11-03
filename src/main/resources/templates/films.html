@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Welcome</title>
+        <script type="text/javascript" src="../js/jquery-3.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Welcome</a>
+    </nav>
+</div>
+<h2>All films</h2>
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Category</th>
+        <th>Producer</th>
+        <th>Price</th>
+        <th>URL</th>
+    </tr>
+    <tr th:each="film : ${films}">
+        <td th:text="${film.id}"></td>
+        <td th:text="${film.titre}"></td>
+        <td th:text="${film.img}"></td>
+        <td th:text="${film.category}"></td>
+        <td th:text="${film.producer}"></td>
+        <td th:text="${film.price}"></td>
+        <td th:text="${film.url}"></td>
+    </tr>
+</table>
+</body>
+</html>
