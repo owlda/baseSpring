@@ -9,8 +9,6 @@
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -18,28 +16,47 @@
         <a class="navbar-brand" href="#">Welcome</a>
     </nav>
 </div>
-<h3>All films</h3>
+<h2>All films</h2>
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Category</th>
+        <th>Producer</th>
+        <th>Price</th>
+        <th>URL</th>
+    </tr>
+    <tr th:each="film : ${films}">
+        <td th:text="${film.id}"></td>
+        <td th:text="${film.titre}"></td>
+        <td th:text="${film.img}"></td>
+        <td th:text="${film.category}"></td>
+        <td th:text="${film.producer}"></td>
+        <td th:text="${film.price}"></td>
+        <td th:text="${film.url}"></td>
+    </tr>
+</table>
+<table id="cards-films">
 
-    <div id="cards-films" th:each="film : ${films}" class="card-group">
+    <th th:each="film : ${films}">
 
-           <div class="card" style="width: 12rem">
-               <img th:src="${film.img}" class="card-img-top" alt="CardImage">
-               <div class="card-body">
+           <div class="card-img-top img-fluid">
+            <img th:src="${film.img}" class="card-img-top" alt="Image-Card" style="width: 18rem;">
+            <div class="card-body">
                 <h5 class="card-title" th:text="${film.titre}"></h5>
                 <p class="card-text" th:text="${film.category}"></p>
-               </div>
-               <ul class="list-group list-group-flush">
+            </div>
+            <ul class="list-group list-group-flush">
                 <li class="list-group-item" th:text="${film.producer}"></li>
                 <li class="list-group-item" th:text="${film.price}"></li>
-                </ul>
-               <div class="card-body">
+            </ul>
+            <div class="card-body">
                 <a class="align-self-end btn btn-lg btn-block btn-primary" th:href="${film.url}" th:text="Preview"></a>
-               </div>
+            </div>
            </div>
-    </div>
 
+    </th>
+</table>
 </body>
-<footer class="footer navbar-custom">
-    <div id="Copyright">© 2019 Copyright: Test site for Spring Boot.</div>
-</footer>
 </html>

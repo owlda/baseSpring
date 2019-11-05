@@ -43,7 +43,7 @@ public class ReadFile {
                     System.out.println(lines[4]);
                     film.setPrice(lines[5]);
                     System.out.println(lines[5]);
-                    film.setUrl("url");
+                    film.setUrl(lines[6]);
                     films.add(film);
 
 
