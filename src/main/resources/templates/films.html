@@ -26,7 +26,9 @@
                 <a class="nav-item nav-link" href="/login">Login</a>
                 <a class="nav-item nav-link" href="/signup">Registration</a>
             </div>
+
         </div>
+          <label style="text-align: center">Demo site by Denis Andrienko</label>
     </nav>
 </div>
 
@@ -85,11 +87,10 @@
 
     </style>
 </div>
-<h3>Special prices: </h3>
 
-    <div id="cards-films" th:each="film : ${films}" class="card-group">
+    <div id="cards-films" th:each="film : ${films}" class="card-group" style="margin-top: 5%">
 
-           <div class="card" style="width: 18rem">
+           <div class="card" style="width: 16rem;">
                <img th:src="${film.img}" class="card-img-top" alt="CardImage">
                <div class="card-body">
                 <h5 class="card-title" th:text="${film.titre}"></h5>
@@ -106,7 +107,7 @@
     </div>
 
 </body>
-<footer class="footer navbar-custom">
+<footer>
     <div id="Copyright">© 2019 Copyright: Test site for Spring Boot.</div>
 </footer>
 </html>

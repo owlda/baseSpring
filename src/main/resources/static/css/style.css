@@ -22,16 +22,7 @@
 .nav a.nav-link:hover {
     background: rgb(63, 62, 62);
 }
-footer {
 
-    height: 100px;
-    background:  rgb(22, 22, 22);
-    width: 100%;
-    color: aliceblue;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 1px;
-}
 #Copyright {
     padding-top: 10px;
 }
@@ -55,6 +46,9 @@ footer {
     text-align: center;
     font-size: 14px;
     margin-top: 1px;
+    position: fixed;
+    bottom: 0;
+
 }
 #Copyright {
     padding-top: 10px;
