@@ -45,9 +45,6 @@ public class ReadFile {
                     System.out.println(lines[5]);
                     film.setUrl(lines[6]);
                     films.add(film);
-
-
-
             }
             inputStream.close();
         } catch (IOException e) {
