@@ -32,17 +32,11 @@ public class ReadFile {
                     Film film = new Film();
                     lines = line.split(";");
                     film.setId(lines[0]);
-                    System.out.println(lines[0]);
                     film.setTitre(lines[1]);
-                    System.out.println(lines[1]);
                     film.setImg(lines[2]);
-                    System.out.println(lines[2]);
                     film.setCategory(lines[3]);
-                    System.out.println(lines[3]);
                     film.setProducer(lines[4]);
-                    System.out.println(lines[4]);
                     film.setPrice(lines[5]);
-                    System.out.println(lines[5]);
                     film.setUrl(lines[6]);
                     films.add(film);
             }

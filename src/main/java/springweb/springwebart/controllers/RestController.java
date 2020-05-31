@@ -5,16 +5,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import springweb.springwebart.functions.ReadFile;
 
 
-
 @Controller
 public class RestController {
 
-
     @GetMapping("/")
-    public String index(Model model) {
-        // list of the films in s3
-        model.addAttribute("films", ReadFile.Show());
-        return "films";
+    public String root(){
+        return "index";
+    }
+
+    @GetMapping("/index")
+    public String index(){
+        return "index";
     }
 
     @GetMapping("/about")
@@ -22,14 +23,15 @@ public class RestController {
         return "about";
     }
 
-    @GetMapping("/login")
-    public String login(){
-        return "login";
+    @GetMapping("/contact")
+    public String contact(){
+        return "contact";
     }
 
-    @GetMapping("/signup")
-    public String signup(){
-        return "signup";
-    }
+    @GetMapping("/films")
+    public String films() { return "films"; }
+
+
 
 }
+
