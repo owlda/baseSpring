@@ -10,6 +10,34 @@ public class Film {
     private String price;
     private String url;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Film)) return false;
+
+        Film film = (Film) o;
+
+        return id.equals(film.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Film{" +
+                "id='" + id + '\'' +
+                ", titre='" + titre + '\'' +
+                ", img='" + img + '\'' +
+                ", category='" + category + '\'' +
+                ", producer='" + producer + '\'' +
+                ", price='" + price + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
+
     public String getId() {
         return id;
     }
