@@ -1,6 +1,5 @@
 package springweb.springwebart.repo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import springweb.springwebart.entity.Posts;
 import springweb.springwebart.services.PostsService;
@@ -31,11 +30,19 @@ public class PostsImplementation implements PostsService {
 
     @Override
     public List<Posts> getAllPosts() {
+       try{
 
-        String sqlQuery = "SELECT * FROM webcontent.posts";
-        List<Posts> listOfPosts = jdbcTemplate.query(sqlQuery, new RowMapper());
+           String sqlQuery = "SELECT * FROM webcontent.posts";
+           List<Posts> listOfPosts = jdbcTemplate.query(sqlQuery, new RowMapper());
 
-        return listOfPosts;
+           return listOfPosts;
+       }
+       catch (NullPointerException ex){
+
+           ex.printStackTrace();
+           return null;
+       }
+
     }
 
     @Override
