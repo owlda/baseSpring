@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql:database-owlda.cdn0mm0jnpcl.us-east-2.rds.amazonaws.com:3306/webcontent
+    username: admin
+    password: Passw0rdNotAllowed
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database: mysql
+    show-sql: false

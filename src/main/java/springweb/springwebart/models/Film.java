@@ -1,5 +1,7 @@
 package springweb.springwebart.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Film {
 
     private String id;

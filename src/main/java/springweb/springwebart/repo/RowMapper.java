@@ -1,15 +1,14 @@
 package springweb.springwebart.repo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import springweb.springwebart.entity.Posts;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 public class RowMapper implements org.springframework.jdbc.core.RowMapper<Posts> {
 
 
-    @Override
-    public Posts mapRow(ResultSet resultSet, int rownum) throws SQLException {
+    @Override    public Posts mapRow(ResultSet resultSet, int rownum) throws SQLException {
 
         Posts posts = new Posts();
         posts.setId(resultSet.getInt("id"));
