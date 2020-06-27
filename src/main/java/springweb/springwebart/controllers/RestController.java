@@ -30,6 +30,9 @@ public class RestController {
     @GetMapping("/films")
     public String films() { return "films"; }
 
+    @GetMapping("/test")
+    public String test() { return "test"; }
+
 
 
 }
